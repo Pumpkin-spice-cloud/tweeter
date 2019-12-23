@@ -1,0 +1,51 @@
+
+.new-tweet {
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+
+#tweetInput {
+  width: 100%;
+  display: flex;
+  min-height: auto;
+  display: inline-block;
+  padding: 20px;
+  padding-bottom: 10px;
+  background-color: transparent;
+  border: transparent;
+  border-bottom: 5px solid black;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  
+}
+
+#tweetSubmit {
+  background: #4056A1;
+  color: white;
+  font-family: 'Bungee', cursive;
+  
+}
+
+
+
+.counter {
+  position: absolute;
+  right: 0;
+  color: black;
+}
+.counter-red {
+  position: absolute;
+  right: 0;
+  color: red;
+}
+.counter-black {
+  position: absolute;
+  right: 0;
+  color: black;
+}
+
+
+

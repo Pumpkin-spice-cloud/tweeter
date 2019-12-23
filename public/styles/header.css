@@ -1,0 +1,51 @@
+
+
+
+@media screen and (min-width: 1024px) {
+  header {
+    order: 1;
+    position: relative;
+    top: 6.2em;
+    width: 30%;
+    height: 20%;
+    background-color:#e29d27;
+    background-image: url('../images/45-degree-fabric-light.png');
+    padding-top: 20px;
+    padding-bottom: 5px;;
+    margin-left: 10%;
+    margin-right: 10%;
+    z-index: 99;
+  
+    }
+}
+
+
+
+@media screen and (max-width: 1023px) {
+header {
+  position: relative;
+  top: 120px;
+  background-color:#e29d27;
+  background-image: url('../images/45-degree-fabric-light.png');
+  padding-top: 20px;
+  padding-bottom: 5px;;
+  z-index: 99;
+
+  }
+}
+
+
+
+img#portrait {
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+
+}
+
+
+header h2 {
+  text-align: center;
+}

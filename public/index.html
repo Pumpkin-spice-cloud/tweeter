@@ -1,29 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Meta Information -->
-    <title>Tweeter - Home Page</title>
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+<head>
+  <!-- Meta Information -->
+  <title>Tweeter - Home Page</title>
 
-    <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <!-- External CSS -->
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
 
-    <!-- External JS -->
-    <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
+  <!-- Bungee & Source Sans Pro Font  -->
+  <link href="https://fonts.googleapis.com/css?family=Bungee|Source+Sans+Pro:300,300i,700,700i&display=swap"
+    rel="stylesheet">
 
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/client.js"></script>
-  </head>
+  <!-- App CSS -->
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
 
-  <body>
-    <!-- Top nav bar (fixed) -->
-    <nav>
-      <span>tweeter</span>
-    </nav>
+  <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
 
-    <!-- Page-specific (main) content here -->
-    <main class="container"></main>
-  </body>
+  <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+
+  <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+
+  <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
+
+  <link rel="stylesheet" href="/styles/error.css" type="text/css" />
+
+  <!-- External JS -->
+  <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
+
+  <!-- App JS -->
+  <script type="text/javascript" src="/scripts/client.js"></script>
+
+  <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+
+  <script type="text/javascript" src="/scripts/tweet.js"></script>
+
+
+</head>
+
+<body>
+  <!-- Top nav bar (fixed) -->
+  <nav>
+    <span id="logo">tweeter</span>
+    <span id="toggleSubmit"><b>Write</b> a new tweet</span>
+  </nav>
+  
+  <header id="top">
+    <div>
+      <img id="portrait" src="/images/profile-hex.png">
+    </div>
+
+    <h2>Your Name</h2>
+    </div>
+  </header>
+
+  <!-- Page-specific (main) content here -->
+
+  <main class="container">
+    <!-- <p>ง</p> -->
+    <section class="new-tweet">
+      <!-- <h2>Compose Tweet</h2> -->
+      <div class="tweetSubmit">
+        <form method="POST" action="/tweets/">
+          <textarea id="tweetInput" name="text"
+            placeholder="What are you humming about? ( ͡° ͜ʖ ͡°)( ͠° ͟ʖ ͡°)( ͡~ ͜ʖ ͡°) ( ͡o ͜ʖ ͡o)(° ͜ʖ °)( ‾ʖ̫‾)( ಠ ͜ʖಠ)"></textarea>
+          <input id="tweetSubmit" type="submit" value="Tweet">
+          <span class="counter">140</span>
+        </form>
+      </div>
+    </section>
+    <article class="tweets">
+    </article>
+
+  </main>
+
+</body>
+
 </html>
