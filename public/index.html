@@ -14,15 +14,10 @@
 
   <!-- App CSS -->
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
-
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
-
   <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
-
   <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
-
   <link rel="stylesheet" href="/styles/error.css" type="text/css" />
 
   <!-- External JS -->
@@ -30,12 +25,8 @@
 
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/client.js"></script>
-
   <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
-
   <script type="text/javascript" src="/scripts/tweet.js"></script>
-
-
 </head>
 
 <body>
@@ -44,36 +35,23 @@
     <span id="logo">tweeter</span>
     <span id="toggleSubmit"><b>Write</b> a new tweet</span>
   </nav>
-  
   <header id="top">
-    <div>
-      <img id="portrait" src="/images/profile-hex.png">
-    </div>
-
+    <img id="portrait" src="/images/profile-hex.png">
     <h2>Your Name</h2>
-    </div>
   </header>
 
   <!-- Page-specific (main) content here -->
-
   <main class="container">
-    <!-- <p>ง</p> -->
     <section class="new-tweet">
-      <!-- <h2>Compose Tweet</h2> -->
-      <div class="tweetSubmit">
-        <form method="POST" action="/tweets/">
-          <textarea id="tweetInput" name="text"
-            placeholder="What are you humming about? ( ͡° ͜ʖ ͡°)( ͠° ͟ʖ ͡°)( ͡~ ͜ʖ ͡°) ( ͡o ͜ʖ ͡o)(° ͜ʖ °)( ‾ʖ̫‾)( ಠ ͜ʖಠ)"></textarea>
-          <input id="tweetSubmit" type="submit" value="Tweet">
-          <span class="counter">140</span>
-        </form>
-      </div>
+      <form method="POST" action="/tweets/">
+        <textarea class="tweet-input" name="text"
+          placeholder="What are you humming about? ( ͡° ͜ʖ ͡°)( ͠° ͟ʖ ͡°)( ͡~ ͜ʖ ͡°) ( ͡o ͜ʖ ͡o)(° ͜ʖ °)( ‾ʖ̫‾)( ಠ ͜ʖಠ)"></textarea>
+        <input class="submit-button" type="submit" value="Tweet">
+        <span class="counter">140</span>
+      </form>
     </section>
     <article class="tweets">
     </article>
-
   </main>
-
 </body>
-
 </html>

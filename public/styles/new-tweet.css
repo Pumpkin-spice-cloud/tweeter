@@ -1,4 +1,4 @@
-
+/*CSS describing display when composing new tweets*/
 .new-tweet {
   position: relative;
   display: block;
@@ -7,7 +7,7 @@
   width: 90%;
 }
 
-#tweetInput {
+.tweet-input {
   width: 100%;
   display: flex;
   min-height: auto;
@@ -18,33 +18,23 @@
   border: transparent;
   border-bottom: 5px solid black;
   margin-bottom: 20px;
-  margin-top: 20px;
-  
+  margin-top: 20px;  
 }
 
-#tweetSubmit {
+.submit-button {
   background: #4056A1;
   color: white;
-  font-family: 'Bungee', cursive;
-  
+  font-family: 'Bungee', cursive;  
 }
-
-
 
 .counter {
   position: absolute;
   right: 0;
   color: black;
 }
+
 .counter-red {
-  position: absolute;
-  right: 0;
   color: red;
-}
-.counter-black {
-  position: absolute;
-  right: 0;
-  color: black;
 }
 
 

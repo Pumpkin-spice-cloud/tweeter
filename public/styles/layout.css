@@ -19,15 +19,11 @@ body {
   background-color: #f4f1ec;
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
-
-
 }
 
 nav span {
   font-family: 'Bungee', cursive;
 }
-
-
 
 main {
   transition: transform 1s;
@@ -35,7 +31,6 @@ main {
   width: 90%;
   position: relative;
   top: -57px;
-  /* border-style: solid; */
   z-index: 15;
 }
 
@@ -43,13 +38,22 @@ main {
   main {
     order: 2;
     transition: transform 1s;
-    left: 5%;
-    width: 80%;
     position: relative;
+    left: 5%;
     top: -57px;
-    /* border-style: solid; */
+    margin-left: 5%;
+    margin-right: 5%;
     z-index: 15;
-    width: 40%;
+    width: 60%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  body {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    
   }
 }
 
@@ -57,14 +61,7 @@ main {
   transform: translate(0px, 177px);
 }
 
-@media screen and (min-width: 1024px) {
-  body {
-    display: flex;
-    flex-direction: row;
-    
-  }
-}
-
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+

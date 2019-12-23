@@ -1,11 +1,3 @@
-article.tweet * {
-  width: 98%;
-  padding-left: 1.5%;
-  padding-right: 1.5%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 article.tweet {
   position: relative;
   display: block;
@@ -14,15 +6,57 @@ article.tweet {
   margin-top: 30px;
   width: 90%;
   border: 5px solid black;
-  height: auto;
+}
+
+article.tweet * {
+  padding-left: 1.5%;
+  padding-right: 1.5%;
+}
+
+.header-container {
+  display: flex;
+  white-space: nowrap;
+  justify-content: space-between;
+  margin-bottom: 1.25em;
+}
+.userHandle {
+  padding-top: 3.7em;
+  font-size: 0.6em;
+  vertical-align: middle;
   
+}
+.userName{
+  position: relative;
+  top: -0.5em;
+  
+}
+.header-container img {
+  margin-top: 1.25em;
+  height: 2em;
+  width: auto;
+}
+
+p.tweet-text {
+  margin-left: 1.2em;
+  margin-right: 1.2em;
+  word-break: break-all;
 }
 
 
 article.tweet footer{
+  margin-left: 1em;
+  margin-right: 1em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
   display: flex;
   justify-content: space-between;
   border-top: 5px solid black;
+}
+
+article.tweet footer * {
+  margin-left: 0;
+  margin-right: 0;
+  font-size: 0.6em;
 }
 article.tweet footer img {
   height: 1em;
@@ -33,32 +67,3 @@ article.tweet:hover {
   box-shadow: 10px 10px 5px #ccccff;
 }
 
-div.header-container {
-  margin-bottom: 20px;
-}
-.header-text {
-  display: flex;
-  justify-content: space-between;
-}
-div.header-container .userHandle {
-  margin-top: 1.5em;
-  font-size: 1em;
-  text-align: right;
-  
-}
-div.header-container .userName{
-  margin-top: 1.5em;
-  
-  
-}
-
-article.tweet .header-text img {
-  margin-top: 20px;
-  height: 50px;
-  width: auto;
-  
-}
-
-.tweet-text {
-  height:auto;
-}

@@ -17,26 +17,23 @@ const createTweetElement = function(input) {
   elapsed = elapsed / 1000 / 60 / 60 / 24;
   elapsed = Math.floor(elapsed);
 
-
-  const $text = `<span class="tweet-text">${escape(input.content.text)}</span>`;
-  const $tweet = $(`<article>
+  const $tweet = $(`<article class="tweet">
                     <div class="header-container">
-                    <div class="header-text">
-                    <img src="${input.user.avatars}"/>
-                      <span class="userName">${input.user.name}</span>
-                      <span class="userHandle">${input.user.handle}</span>
+                      <div>
+                        <img src="${input.user.avatars}"/>
+                        <span class="userName">${input.user.name}</span>
                       </div>
+                        <span class="userHandle">${input.user.handle}</span>
+                      
                     </div>
-                    
-                    
-
-  `).addClass("tweet");
-  const $tweet2 = $(`<footer><span>${elapsed} days ago</span> <img src="images/footer-icon.png"></img> </footer>
-                    </article>)
+                    <p class="tweet-text">${escape(input.content.text)}</p>
+                    <footer> 
+                      <span>${elapsed} days ago</span> 
+                      <img src="images/footer-icon.png"></img> 
+                    </footer>
+                    </article>
   `);
-  $tweet.append($text).append($tweet2);
   return $tweet;
-
 };
 
 const renderTweets = function(tweetObjs) {
@@ -45,19 +42,18 @@ const renderTweets = function(tweetObjs) {
   }
 };
 
-
-
 $(document).ready(function() {
-  let hideSubmit = true;
+  let submitHidden = true;
   $('#toggleSubmit').click(function() {
-    if (hideSubmit) {
+    if (submitHidden) {
       $('.container').addClass("nav-show");
-      $('.tweetSubmit textarea').focus();
-      hideSubmit = false;
-    } else if (!hideSubmit) {
+      $('.new-tweet textarea').focus();
+      submitHidden = false;
+      $('.error').show("fast"); //shows error message if there is one when tweet submit is revealed
+    } else if (!submitHidden) {
       $('.container').removeClass("nav-show");
-
-      hideSubmit = true;
+      submitHidden = true;
+      $('.error').hide("fast"); //hides error message if there is one when hidng tweet submit box
     }
   });
 
@@ -75,49 +71,39 @@ $(document).ready(function() {
 
 
 
-  $(".tweetSubmit form").submit(function(event) {
-    const charCounter = parseInt(($(".tweetSubmit span").text()));
-
+  $(".new-tweet form").submit(function(event) {
+    const charCounter = parseInt(($(".new-tweet span").text()));
     if (charCounter >= 0 && charCounter < 140) {
-
       $.ajax({
         url: '/tweets/',
         method: 'POST',
-        data: $(".tweetSubmit textarea").serialize(),
-
+        data: $(".new-tweet .tweet-input").serialize(),
         success: function() {
-          $('.tweetSubmit textarea').val('');
-          $(".tweetSubmit span").text('140');
+          $('.new-tweet .tweet-input').val('');
+          $(".new-tweet .counter").text('140');
           loadTweets();
-
-
         },
         error: function(xhr, desc, err) {
           console.log(xhr);
         },
-        // $('article.tweet').append(tweet);
       });
-    } else if (charCounter < 0 && !$(".error p").length) {
 
-      $(`
+      //Show error if input is too large, or empty
+    } else if (charCounter < 0 && !$(".error p").length) {
+      $(` 
       <div class="error">
-        <p>Tweet is too large </p>
+        <p>Tweet is too large. Please respect our 140 character limit</p>
       </div>
       `).prependTo(".container");
-
       $(".error").hide().slideDown("fast");
-
     } else if (charCounter === 140 && !$(".error p").length) {
       $(`
       <div class="error">
-        <p>Type something bud </p>
+        <p>Tweet is empty!! You need to type something</p>
       </div>
       `).prependTo(".container");
       $(".error").hide().slideDown("fast");
-
     }
-
-
     event.preventDefault();
   });
 });
