@@ -1,3 +1,4 @@
+//Change colour of character counter depending on amount of characters in textarea
 $(document).ready(function() {
   $(".tweet-input").bind('input propertychange', function() {
     let counter = 140;
@@ -9,7 +10,7 @@ $(document).ready(function() {
     } else {
       $(this).siblings("span").removeClass("counter-red");
     }
-    if (counter >= 0 && counter < 140) {
+    if (counter >= 0 && counter < 140) {//remove error if current character input is valid
       $(".error").remove();
     }
   });

@@ -1,12 +1,9 @@
-
-
-
 @media screen and (min-width: 1024px) {
   header {
     order: 1;
     position: relative;
-    top: 6.2em;
-    width: 30%;
+    top: 8em;
+    width: 40%;
     height: 20%;
     background-color:#e29d27;
     background-image: url('../images/45-degree-fabric-light.png');
@@ -14,37 +11,43 @@
     padding-bottom: 5px;;
     margin-left: 5%;
     margin-right: 5%;
-    z-index: 99;
-  
-    }
+    z-index: 1;
+  }
 }
 
-
-
 @media screen and (max-width: 1023px) {
-header {
-  position: relative;
-  top: 120px;
-  background-color:#e29d27;
-  background-image: url('../images/45-degree-fabric-light.png');
-  padding-top: 20px;
-  padding-bottom: 5px;;
-  z-index: 99;
-
+  header {
+    position: relative;
+    top: 7em;
+    background-color:#e29d27;
+    background-image: url('../images/45-degree-fabric-light.png');
+    padding-top: 20px;
+    padding-bottom: 5px;;
+    z-index: 1;
   }
 }
 
 
 
-img#portrait {
-  position: relative;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-
-
+@media screen and (min-width: 1024px) {
+  img#portrait {
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
+
+@media screen and (max-width: 1023px) {
+  img#portrait {
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 8em;
+  }
+}
 
 header h2 {
   text-align: center;

@@ -5,12 +5,14 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+//function for allowing only safe characters to be inputted when submitting tweet
 const escape = function(str) {
   let p = document.createElement('p');
   p.appendChild(document.createTextNode(str));
   return p.innerHTML;
 };
 
+//Generate a HTML containing individual tweet infos
 const createTweetElement = function(input) {
   let currentTime = Date.now();
   let elapsed = currentTime - input.created_at;
@@ -24,7 +26,6 @@ const createTweetElement = function(input) {
                         <span class="userName">${input.user.name}</span>
                       </div>
                         <span class="userHandle">${input.user.handle}</span>
-                      
                     </div>
                     <p class="tweet-text">${escape(input.content.text)}</p>
                     <footer> 
@@ -42,43 +43,41 @@ const renderTweets = function(tweetObjs) {
   }
 };
 
+const loadTweets = function() {
+  $.ajax({
+    url: '/tweets',
+    method: 'GET',
+    success: function(data) {
+      $('.tweet').remove();
+      renderTweets(data);
+    }
+  });
+};
+
 $(document).ready(function() {
   let submitHidden = true;
+  //toggles the display of the tweet submission box
   $('#toggleSubmit').click(function() {
     if (submitHidden) {
       $('.container').addClass("nav-show");
       $('.new-tweet textarea').focus();
+      $('.error').show("fast"); //shows error message if there is one when tweet submit box is revealed
       submitHidden = false;
-      $('.error').show("fast"); //shows error message if there is one when tweet submit is revealed
     } else if (!submitHidden) {
       $('.container').removeClass("nav-show");
+      $('.error').hide("fast"); //hides error message if there is one when hiding tweet submit box
       submitHidden = true;
-      $('.error').hide("fast"); //hides error message if there is one when hidng tweet submit box
     }
   });
-
-  const loadTweets = function() {
-    $.ajax({
-      url: '/tweets',
-      method: 'GET',
-      success: function(data) {
-        $('.tweet').empty();
-        renderTweets(data);
-      }
-    });
-  };
   loadTweets();
-
-
-
   $(".new-tweet form").submit(function(event) {
     const charCounter = parseInt(($(".new-tweet span").text()));
-    if (charCounter >= 0 && charCounter < 140) {
+    if (charCounter >= 0 && charCounter < 140) { //submit new tweet to database only when input character count is satisfactory
       $.ajax({
         url: '/tweets/',
         method: 'POST',
         data: $(".new-tweet .tweet-input").serialize(),
-        success: function() {
+        success: function() { //reset submission box for future submissions
           $('.new-tweet .tweet-input').val('');
           $(".new-tweet .counter").text('140');
           loadTweets();
