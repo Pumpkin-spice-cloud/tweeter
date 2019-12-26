@@ -3,7 +3,7 @@ nav {
   justify-content: space-between;
   background-color: #4056A1;
   color: #FFFFFF;
-  height: 23%;
+  height: 24%;
   position: fixed;
   top: 0px;
   width: 100%;
@@ -11,6 +11,11 @@ nav {
   padding-left: 1.5em;
   padding-top: 1.5em;
   padding-right: 1.5em;
+}
+@media screen and (max-width: 1023px) {
+  nav {
+    height: 15%; 
+  }
 }
 
 #toggleSubmit {

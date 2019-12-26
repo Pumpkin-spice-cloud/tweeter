@@ -2,7 +2,7 @@
   header {
     order: 1;
     position: relative;
-    top: 8em;
+    top: 8.3em;
     width: 40%;
     height: 20%;
     background-color:#e29d27;
@@ -18,7 +18,7 @@
 @media screen and (max-width: 1023px) {
   header {
     position: relative;
-    top: 7em;
+    top: 4.5em;
     background-color:#e29d27;
     background-image: url('../images/45-degree-fabric-light.png');
     padding-top: 20px;

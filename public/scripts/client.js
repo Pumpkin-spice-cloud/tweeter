@@ -82,7 +82,7 @@ $(document).ready(function() {
           $(".new-tweet .counter").text('140');
           loadTweets();
         },
-        error: function(xhr, desc, err) {
+        error: function(xhr) {
           console.log(xhr);
         },
       });
