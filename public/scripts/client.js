@@ -56,15 +56,16 @@ const loadTweets = function() {
 
 $(document).ready(function() {
   let submitHidden = true;
+  
   //toggles the display of the tweet submission box
   $('#toggleSubmit').click(function() {
     if (submitHidden) {
-      $('.container').addClass("nav-show");
+      $('.new-tweet').slideDown();
       $('.new-tweet textarea').focus();
       $('.error').show("fast"); //shows error message if there is one when tweet submit box is revealed
       submitHidden = false;
-    } else if (!submitHidden) {
-      $('.container').removeClass("nav-show");
+    } else {
+      $('.new-tweet').slideUp();
       $('.error').hide("fast"); //hides error message if there is one when hiding tweet submit box
       submitHidden = true;
     }

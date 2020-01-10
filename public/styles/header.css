@@ -1,8 +1,8 @@
 @media screen and (min-width: 1024px) {
   header {
-    order: 1;
+    flex: 2;
     position: relative;
-    top: 8.3em;
+    top: 6.3em;
     width: 40%;
     height: 20%;
     background-color:#e29d27;
@@ -11,19 +11,18 @@
     padding-bottom: 5px;;
     margin-left: 5%;
     margin-right: 5%;
-    z-index: 1;
+    z-index: 3;
   }
 }
 
 @media screen and (max-width: 1023px) {
   header {
     position: relative;
-    top: 4.5em;
+    top: 4em;
     background-color:#e29d27;
     background-image: url('../images/45-degree-fabric-light.png');
     padding-top: 20px;
     padding-bottom: 5px;;
-    z-index: 1;
   }
 }
 

@@ -1,7 +1,7 @@
 /*CSS describing new tweet submit box*/
 .new-tweet {
   position: relative;
-  display: block;
+  display: none;
   margin-left: auto;
   margin-right: auto;
   width: 90%;
@@ -9,7 +9,6 @@
 
 .tweet-input {
   width: 100%;
-  display: flex;
   display: inline-block;
   padding: 0.9em;
   padding-bottom: 0.5em;
