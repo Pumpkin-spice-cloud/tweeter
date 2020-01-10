@@ -15,3 +15,11 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+
+## Screenshots
+Desktop View
+!["screennshot of tweeter in desktop view"](https://raw.githubusercontent.com/Pumpkin-spice-cloud/tweeter/master/docs/tweet-desktop.png)
+
+Mobile view
+
+!["screentshot of tweeter in mobile view"](https://raw.githubusercontent.com/Pumpkin-spice-cloud/tweeter/master/docs/tweet-tablet.png)
